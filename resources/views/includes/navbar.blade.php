@@ -1,30 +1,47 @@
-<!-- Topbar -->
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+<div class="container">
+    <nav class="row navbar navbar-expand-lg navbar-light bg-white">
+        <a href="{{ url('') }}" class="navbar-brand">
+            <img src="{{ url('assets/images/logo.png') }}" alt="tourify-logo">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#nav-item">
+            <span class="navbar-toggler-icon">
 
-    <!-- Sidebar Toggle (Topbar) -->
-    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-        <i class="fa fa-bars"></i>
-    </button>
+            </span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav-item">
+            <ul class="navbar-nav ml-auto mr-3">
+                <li class="nav-item mx-md-2">
+                    <a href="#" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item mx-md-2">
+                    <a href="#" class="nav-link">Paket Travel</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="nav-drop" data-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">VISA</a>
+                        <a href="#" class="dropdown-item">Passport</a>
+                    </div>
+                </li>
+                <li class="nav-item mx-md-2">
+                    <a href="#" class="nav-link">Testimonial</a>
+                </li>
+            </ul>
+            <!-- mobile-button-start -->
+            <form action="" class="form-inline d-sm-block d-lg-none">
+                <button class="btn btn-login my-2 my-sm-0">
+                    Masuk
+                </button>
+            </form>
+            <!-- mobile-button-end -->
 
-    <!-- Topbar Navbar -->
-    <ul class="navbar-nav ml-auto">
-
-        <!-- Nav Item - User Information -->
-        <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-            </a>
-            <!-- Dropdown - User Information -->
-            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Logout
-                </a>
-            </div>
-        </li>
-
-    </ul>
-
-</nav>
-<!-- End of Topbar -->
+            <!-- desktop-button-start -->
+            <form action="" class="form-inline my-2 my-lg-0 d-none d-lg-block">
+                <button class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4">
+                    Masuk
+                </button>
+            </form>
+            <!-- desktop-button-end -->
+        </div>
+    </nav>
+</div>

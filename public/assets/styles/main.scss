@@ -1,0 +1,519 @@
+body {
+    font-family: 'Assistant', sans-serif;
+    color: #071C4D;
+}
+
+// navbar
+.navbar-brand {
+    img {
+        max-height: 40px;
+    }
+}
+
+.navbar-light {
+    .navbar-nav {
+        .nav-link {
+            color: #071C4D;
+            &.active {
+                font-weight: bold;
+                color: #071C4D !important;
+            }
+        }
+    }
+}
+
+.btn-navbar-right {
+    margin-top: -10px !important;
+    margin-bottom: -8px !important;
+    margin-right: -18px !important;
+    height: 70px;
+    border-radius: 0;
+}
+
+.btn-login {
+    background-color: #071C4D;
+    color: white;
+    &:hover {
+        background-color: #0D3185;
+        color: white;
+    }
+}
+
+// banner
+header {
+    padding: 180px 0 135px;
+    margin-top: -70px;
+    background-image: url('../images/banner.jpg');
+    background-size: cover;
+    color: white;
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-weight: bold;
+        font-size: 50px;
+    }
+    p {
+        font-size: 22px;
+    }
+    .btn-cta {
+        background-color: #FF7F00;
+        color: white;
+        &:hover {
+            background-color: #FF9100;
+            color: white;
+        }
+    }
+}
+
+// main-content
+// stats
+.stats {
+    margin-top: -50px;
+    .stats-detail {
+        padding-top: 15px;
+        padding-right: 15px;
+        background: #fff;
+        padding-left: 35px;
+    }
+    h2 {
+        font-size: 30px;
+        margin-bottom: 0;
+    }
+    p {
+        font-size: 20px;
+        font-weight: lighter;
+    }
+}
+
+// popular
+.popular {
+    background-color: #051334;
+    color: white;
+    min-height: 460px;
+    margin-top: -50px;
+    margin-bottom: -170px;
+    .popular-heading {
+        margin-top: 105px;
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            font-size: 40px;
+        }
+        p {
+            font-size: 20px;
+        }
+    }
+}
+
+.popular-item {
+    .popular-thumbs {
+        .card-item {
+            min-height: 382px;
+            color: white;
+            padding: 30px;
+            background-size: cover;
+            margin-bottom: 50px;
+            .travel-country {
+                font-size: 18px;
+            }
+            .travel-loc {
+                font-size: 26px;
+            }
+            .travel-btn {
+                .btn-travel {
+                    background-color: #FF7F00;
+                    color: white;
+                    &:hover {
+                        background-color: #FF9100;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.network {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .network-heading {
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            font-size: 40px;
+        }
+        p {
+            font-size: 20px;
+        }
+    }
+    .network-items {
+        .network-item {
+            margin: auto;
+            img {
+                max-height: 70px;
+            }
+        }
+    }
+}
+
+.testimoni-heading {
+    background: linear-gradient(#fff 0%, #f7f9ff 100%);
+    min-height: 405px;
+    padding-top: 50px;
+    h2 {
+        font-family: 'Playfair Display', serif;
+        font-weight: bold;
+        font-size: 40px;
+    }
+    p {
+        font-size: 20px;
+    }
+}
+
+.testimoni-content {
+    margin-top: -170px;
+    padding-bottom: 50px;
+    .popular-testi {
+        .card {
+            border-radius: 11px;
+            hr {
+                margin-left: -20px;
+                margin-right: -20px;
+            }
+            .testi-user {
+                h3,
+                .testi-trip {
+                    font-size: 22px;
+                }
+                .testi-content {
+                    font-size: 24px;
+                    font-weight: lighter;
+                    min-height: 180px;
+                }
+                p {
+                    color: #6e6e6e;
+                }
+                padding: 50px 20px 0;
+            }
+        }
+    }
+    .btn-testi {
+        margin-top: 20px;
+        max-width: 300px;
+        .btn-help {
+            background-color: #D5D5D5;
+            font-weight: lighter;
+        }
+        .btn-get {
+            background-color: #FF7F00;
+            color: white;
+            font-weight: 400;
+            &:hover {
+                background-color: #FF9100;
+                color: white;
+            }
+        }
+    }
+}
+
+.footer-content {
+    margin-top: 50px;
+    a,
+    li {
+        color: #071C4D;
+        font-weight: normal;
+    }
+}
+
+// detail page
+// header background
+.detail-header {
+    min-height: 300px;
+    background-color: #E4E6EB;
+    margin-top: -70px;
+}
+
+// content
+.detail-content {
+    margin-top: -220px;
+    min-height: 100vh;
+    .breadcrumb {
+        padding: 30px 0;
+        margin-bottom: 0;
+        background-color: transparent;
+        .active {
+            font-weight: bold;
+            color: #071C4D;
+        }
+    }
+    .card-detail {
+        margin-bottom: 50px;
+        padding: 30px;
+        border-radius: 11px;
+        h2 {
+            font-size: 26px;
+            color: #071C4D;
+            margin-bottom: 5px;
+        }
+        .about {
+            h2 {
+                font-size: 20px;
+            }
+        }
+        p {
+            color: #B5B5B5;
+            font-weight: lighter;
+            font-size: 18px;
+        }
+        .gallery {
+            .xzoom-container {
+                display: block;
+                #xzoom-default {
+                    padding-bottom: 20px;
+                }
+                .xzoom {
+                    width: 100%;
+                    box-shadow: none;
+                }
+                .xactive {
+                    border: 4px solid #C6C6C6;
+                    box-shadow: none;
+                }
+            }
+        }
+        .about {
+            padding: 30px 0;
+            p {
+                padding: 10px 0 0;
+                margin: 0;
+            }
+        }
+        .additional {
+            .info {
+                overflow: hidden;
+                float: left;
+                img {
+                    float: left;
+                    align-content: center;
+                }
+                p {
+                    color: #071C4D;
+                    margin: 0;
+                    font-size: 18px;
+                    font-weight: normal;
+                }
+                .info-desc {
+                    font-size: 14px;
+                    color: #B5B5B5;
+                }
+            }
+        }
+        // checkout-page-start
+        .members-going {
+            tr {
+                color: #071C4D;
+                td {
+                    vertical-align: middle;
+                    .avatar {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+            }
+        }
+        .add-member {
+            margin-bottom: 20px;
+            h3 {
+                font-size: 20px;
+                padding-bottom: 20px;
+            }
+            .gj-datepicker {
+                .datepicker {
+                    border-right: 0;
+                }
+            }
+            .input-group-append {
+                .btn {
+                    padding-right: 30px;
+                }
+            }
+            .btn-add {
+                background-color: #071C4D;
+                color: white;
+                &:hover {
+                    background-color: #0D3185;
+                    color: white;
+                }
+            }
+        }
+        .disclaimer {
+            h6 {
+                margin: 0;
+                color: #071C4D;
+            }
+            span {
+                color: #B5B5B5;
+            }
+        }
+        // checkout-page-end
+    }
+}
+
+// cust. detail
+.detail-cust {
+    .card-cust {
+        border-radius: 11px 11px 0 0;
+        padding: 30px 30px 0 30px;
+        h2 {
+            font-size: 20px;
+            margin: 0;
+        }
+        .members {
+            img {
+                float: left;
+            }
+            .plus {
+                width: 40px;
+                height: 40px;
+                background-color: #E4E6EB;
+                float: left;
+                p {
+                    margin: 0;
+                }
+            }
+        }
+        hr {
+            margin: 0;
+            border: 1px solid #D5D5D5;
+        }
+        .trip-info {
+            font-size: 18px;
+            font-weight: lighter;
+            .ket {
+                font-size: 11px;
+            }
+            td {
+                width: 50%;
+            }
+            .info-desc {
+                text-align: right;
+                color: #B5B5B5;
+            }
+            // checkout-page-start
+            .pay {
+                color: #071C4D;
+                .ucode {
+                    color: #FF7F00;
+                }
+            }
+            // checkout-page-end
+        }
+        // chekout-page-start
+        .instruction {
+            color: #B5B5B5;
+            line-height: 1;
+        }
+        .bank-info {
+            img {
+                float: left;
+            }
+            .bank-desc {
+                margin-left: 25px;
+                p {
+                    line-height: 1.2;
+                    margin: 0;
+                }
+            }
+        }
+        // chekout-page-end
+    }
+    .join {
+        margin-left: -31px;
+        margin-right: -31px;
+        background-color: #FF7F00;
+        color: white;
+        &:hover {
+            background-color: #FF9100;
+            color: white;
+        }
+        a {
+            padding-right: 15px;
+            color: white;
+        }
+    }
+    // checkout-page
+    .cancel-book {
+        a {
+            color: #B5B5B5;
+        }
+    }
+}
+
+// success page
+.success {
+    height: 90vh;
+    img {
+        margin-bottom: 30px;
+    }
+    h2 {
+        font-size: 26px;
+    }
+    h5 {
+        font-size: 20px;
+        font-weight: lighter;
+        color: #B5B5B5;
+        margin-bottom: 30px;
+    }
+    .btn-home {
+        background-color: #071C4D;
+        color: white;
+        &:hover {
+            background-color: #0D3185;
+            color: white;
+        }
+    }
+}
+
+// mobile & tablet device
+@media only screen and (max-width: 768px) {
+    .stats {
+        .stats-detail {
+            text-align: center;
+        }
+    }
+    .content {
+        margin-top: -145px;
+        padding-top: 195px;
+    }
+    .network {
+        .network-heading {
+            text-align: center;
+        }
+        .network-items {
+            .network-item {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+// extra small device
+@media only screen and (max-width: 576px) {
+    //checkout page
+    .detail-content {
+        .card-detail {
+            .add-member {
+                .btn-add {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .success {
+        img {
+            width: 40%;
+            height: 40%;
+        }
+    }
+}
