@@ -27,21 +27,43 @@
                     <a href="#" class="nav-link">Testimonial</a>
                 </li>
             </ul>
-            <!-- mobile-button-start -->
-            <form action="" class="form-inline d-sm-block d-lg-none">
-                <button class="btn btn-login my-2 my-sm-0">
-                    Masuk
-                </button>
-            </form>
-            <!-- mobile-button-end -->
+            @guest
+                <!-- mobile-button-start -->
+                <form action="" class="form-inline d-sm-block d-lg-none">
+                    <button class="btn btn-login my-2 my-sm-0" type="button" onclick="event.preventDefault(); location.href = '{{ url('login') }}'">
+                        Masuk
+                    </button>
+                </form>
+                <!-- mobile-button-end -->
 
-            <!-- desktop-button-start -->
-            <form action="" class="form-inline my-2 my-lg-0 d-none d-lg-block">
-                <button class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4">
-                    Masuk
-                </button>
-            </form>
-            <!-- desktop-button-end -->
+                <!-- desktop-button-start -->
+                <form action="" class="form-inline my-2 my-lg-0 d-none d-lg-block">
+                    <button class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" type="button" onclick="event.preventDefault(); location.href = '{{ url('login') }}'">
+                        Masuk
+                    </button>
+                </form>
+                <!-- desktop-button-end -->
+            @endguest
+
+            @auth
+                <!-- mobile-button-start -->
+                <form class="form-inline d-sm-block d-lg-none" action="{{ url('logout') }}" method="post" type="submit">
+                    <button class="btn btn-login my-2 my-sm-0">
+                        @csrf
+                        Keluar
+                    </button>
+                </form>
+                <!-- mobile-button-end -->
+
+                <!-- desktop-button-start -->
+                <form class="form-inline my-2 my-lg-0 d-none d-lg-block" action="{{ url('logout') }}" method="post" type="submit">
+                    <button class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4">
+                        @csrf
+                        Keluar
+                    </button>
+                </form>
+                <!-- desktop-button-end -->
+            @endauth
         </div>
     </nav>
 </div>
