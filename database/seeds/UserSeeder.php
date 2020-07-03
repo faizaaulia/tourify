@@ -17,11 +17,13 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Faiz',
                 'email' => 'admin@tourify.id',
+                'username' => 'admin',
                 'password' => Hash::make('admin'),
                 'roles' => 'ADMIN' ], 
             [
                 'name' => 'Faiza Aulia',
                 'email' => 'faizaaulia20@gmail.com',
+                'username' => 'faizaaulia',
                 'password' => Hash::make('rahasia'),
                 'roles' => 'USER' 
             ]
