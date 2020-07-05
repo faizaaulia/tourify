@@ -17,7 +17,7 @@ class TravelPackageController extends Controller
      */
     public function index()
     {
-        $items = TravelPackage::all();
+        $items = TravelPackage::orderBy('created_at', 'desc')->get();
         
         return view('pages.admin.travel-package.index', ['items' => $items]);
     }
@@ -66,7 +66,9 @@ class TravelPackageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = TravelPackage::findOrFail($id);
+
+        return view('pages.admin.travel-package.edit', ['item' => $item]);
     }
 
     /**
@@ -76,9 +78,15 @@ class TravelPackageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TravelPackageRequest $request, $id)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->title);
+
+        $item = TravelPackage::findOrFail($id);
+        $item->update($data);
+
+        return redirect()->route('travel-package.index');
     }
 
     /**
@@ -89,6 +97,9 @@ class TravelPackageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = TravelPackage::findOrFail($id);
+        $item->delete();
+
+        return redirect()->route('travel-package.index'); 
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class TravelPackageRequest extends FormRequest
 {
@@ -24,7 +25,11 @@ class TravelPackageRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|max:255|unique:travel_packages',
+            'title' => [
+                'required','max:255', 
+                Rule::unique('travel_packages')->ignore($this->travel_packages, 'title')
+                // unique('table_name')->ignore($this->table_name, 'column')
+            ],
             'location' => 'required|max:255',
             'about' => 'required',
             'event' => 'required|max:255',

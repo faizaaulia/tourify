@@ -27,7 +27,7 @@
                             <th>Location</th>
                             <th>Type</th>
                             <th>Departure Date</th>
-                            <th>Type</th>
+                            <th>Price</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -39,13 +39,13 @@
                                 <td>{{ $item->location }}</td>
                                 <td>{{ $item->type }}</td>
                                 <td>{{ $item->departure_date }}</td>
-                                <td>{{ $item->type }}</td>
+                                <td>${{ $item->price }}</td>
                                 <td>
                                     <a href="{{ route('travel-package.edit', $item->id) }}" class="btn btn-sm btn-info"><i class="fa fa-pencil-alt"></i></a>
                                     <form action="{{ route('travel-package.destroy', $item->id) }}" method="post" class="d-inline">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-sm btn-danger">
+                                        <button class="btn btn-sm btn-danger" onclick="return confirm('Permanently delete {{ $item->title }}?')">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                     </form>
