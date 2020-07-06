@@ -24,8 +24,8 @@
         </a>
     </li>
     
-    <li class="nav-item {{ Route::currentRouteName() == 'galleries.index' ? 'active' : '' }}">
-        <a class="nav-link" href="index.html">
+    <li class="nav-item {{ Route::currentRouteName() == 'gallery.index' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('gallery.index') }}">
             <i class="fas fa-fw fa-images"></i>
             <span>Galeri Travel</span>
         </a>

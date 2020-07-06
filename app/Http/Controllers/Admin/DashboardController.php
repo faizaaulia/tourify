@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\TravelPackage;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        return view('pages.admin.dashboard');
+        $travel_count = TravelPackage::all()->count();
+
+        return view('pages.admin.dashboard', ['travel_count' => $travel_count]);
     }
 }
