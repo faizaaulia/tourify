@@ -13,6 +13,14 @@
 
   @include('includes.admin.style')
 
+  <style>
+    .breadcrumb {
+      background-color: transparent;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+
 </head>
 
 <body id="page-top">
