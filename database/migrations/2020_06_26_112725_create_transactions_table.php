@@ -15,6 +15,7 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+            $table->string('trx_id', 25);
             $table->integer('travel_packages_id');
             $table->integer('users_id');
             $table->integer('additional_visa');

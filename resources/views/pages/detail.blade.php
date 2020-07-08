@@ -109,7 +109,8 @@
                         </table>
                         <div class="join text-center">
                             @auth
-                                <form action="" method="post">
+                                <form action="{{ route('checkout-process', $item->id) }}" method="post">
+                                    @csrf
                                     <button class="btn btn-block btn-join text-white">Join Now</button>
                                 </form>
                             @endauth

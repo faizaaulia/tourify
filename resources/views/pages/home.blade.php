@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
-    <header class="text-center">
+    <header class="text-center" id="header">
         <h1>Inspiration for Your <br> Next Vacation</h1>
         <p class="mt-3">Offer the perfect variety of experiences to <br> satisfy anyone's desire for adventure</p>
         <a href="#popular" class="btn btn-cta px-4 mt-4">Get Started</a>
@@ -81,58 +81,60 @@
                 </div>
             </div>
         </section>
-        <section class="testimoni-heading" id="testimoni-heading">
-            <div class="container">
-                <div class="row">
-                    <div class="col text-center">
-                        <h2>They Are Loving Us</h2>
-                        <p>Experience we were <br> giving are the best one</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="testimoni-content" id="testimoni-content">
-            <div class="container">
-                <div class="popular-testi row justify-content-center">
-                    <div class="col-12 col-sm-6 col-lg-4 mb-5">
-                        <div class="card card-testi text-center">
-                            <div class="testi-user">
-                                <img src="{{ 'assets/images/avatars/testi-1.png' }}" alt="" class="mb-4 rounded-circle">
-                                <h3 class="mb-4">Faiza Aulia</h3>
-                                <p class="testi-content">" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " </p>
-                                <hr>
-                                <p class="testi-trip mt-2">Trip to Bromo</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-4 mb-5">
-                        <div class="card card-testi text-center">
-                            <div class="testi-user">
-                                <img src="{{ 'assets/images/avatars/testi-2.png' }}" alt="" class="mb-4 rounded-circle">
-                                <h3 class="mb-4">Shayna</h3>
-                                <p class="testi-content">" Lorem ipsum dolor, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " </p>
-                                <hr>
-                                <p class="testi-trip mt-2">Trip to Bromo</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-4 mb-5">
-                        <div class="card card-testi text-center">
-                            <div class="testi-user">
-                                <img src="{{ 'assets/images/avatars/testi-3.png' }}" alt="" class="mb-4 rounded-circle">
-                                <h3 class="mb-4">Mary Jane</h3>
-                                <p class="testi-content">" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " </p>
-                                <hr>
-                                <p class="testi-trip mt-2">Trip to Bromo</p>
-                            </div>
+        <div id="testimonial">
+            <section class="testimoni-heading" id="testimoni-heading">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h2>They Are Loving Us</h2>
+                            <p>Experience we were <br> giving are the best one</p>
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-around btn-testi mx-auto">
-                    <a href="#" class="btn btn-help px-4">I Need Help</a>
-                    <a href="{{ url('register') }}" class="btn btn-get px-4">Get Started</a>
+            </section>
+            <section class="testimoni-content" id="testimoni-content">
+                <div class="container">
+                    <div class="popular-testi row justify-content-center">
+                        <div class="col-12 col-sm-6 col-lg-4 mb-5">
+                            <div class="card card-testi text-center">
+                                <div class="testi-user">
+                                    <img src="{{ 'assets/images/avatars/testi-1.png' }}" alt="" class="mb-4 rounded-circle">
+                                    <h3 class="mb-4">Faiza Aulia</h3>
+                                    <p class="testi-content">" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " </p>
+                                    <hr>
+                                    <p class="testi-trip mt-2">Trip to Bromo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-5">
+                            <div class="card card-testi text-center">
+                                <div class="testi-user">
+                                    <img src="{{ 'assets/images/avatars/testi-2.png' }}" alt="" class="mb-4 rounded-circle">
+                                    <h3 class="mb-4">Shayna</h3>
+                                    <p class="testi-content">" Lorem ipsum dolor, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " </p>
+                                    <hr>
+                                    <p class="testi-trip mt-2">Trip to Bromo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-5">
+                            <div class="card card-testi text-center">
+                                <div class="testi-user">
+                                    <img src="{{ 'assets/images/avatars/testi-3.png' }}" alt="" class="mb-4 rounded-circle">
+                                    <h3 class="mb-4">Mary Jane</h3>
+                                    <p class="testi-content">" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " </p>
+                                    <hr>
+                                    <p class="testi-trip mt-2">Trip to Bromo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-around btn-testi mx-auto">
+                        <a href="#" class="btn btn-help px-4">I Need Help</a>
+                        <a href="{{ Auth::user() ? '#header' : url('register') }}" class="btn btn-get px-4">Get Started</a>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 @endsection

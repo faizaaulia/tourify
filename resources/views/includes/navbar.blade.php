@@ -24,7 +24,7 @@
                     </div>
                 </li>
                 <li class="nav-item mx-md-2">
-                    <a href="#" class="nav-link">Testimonial</a>
+                    <a href="#testimonial" class="nav-link">Testimonial</a>
                 </li>
             </ul>
             @guest

@@ -10,14 +10,14 @@ class Transaction extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'travel_packages_id', 'users_id', 'additional_visa',
+        'trx_id', 'travel_packages_id', 'users_id', 'additional_visa',
         'transaction_total', 'transaction_status'
     ];
 
     protected $hidden = [];
 
     public function details() {
-        return $this->hasMany(TransactionDetail::class, 'transactions_id', 'id');
+        return $this->hasMany(TransactionDetail::class, 'trxs_id', 'trx_id');
     }
 
     public function travel_package() {

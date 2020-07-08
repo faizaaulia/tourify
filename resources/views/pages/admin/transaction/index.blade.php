@@ -25,7 +25,7 @@
                 <table class="table table-bordered" width="100%" colspacing="0">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>#</th>
                             <th>Travel</th>
                             <th>User</th>
                             <th>VISA</th>
@@ -37,19 +37,19 @@
                     <tbody>
                         @forelse ($items as $item)
                             <tr>
-                                <td>{{ $item->id }}</td>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->travel_package->title }}</td>
                                 <td>{{ $item->user->name }}</td>
                                 <td>${{ $item->additional_visa }}</td>
                                 <td>${{ $item->transaction_total }}</td>
                                 <td>{{ $item->transaction_status }}</td>
                                 <td>
-                                    <a href="{{ route('transaction.show', $item->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></a>
-                                    <a href="{{ route('transaction.edit', $item->id) }}" class="btn btn-sm btn-info"><i class="fa fa-pencil-alt"></i></a>
-                                    <form action="{{ route('transaction.destroy', $item->id) }}" method="post" class="d-inline">
+                                    <a href="{{ route('transaction.show', $item->trx_id) }}" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></a>
+                                    <a href="{{ route('transaction.edit', $item->trx_id) }}" class="btn btn-sm btn-info"><i class="fa fa-pencil-alt"></i></a>
+                                    <form action="{{ route('transaction.destroy', $item->trx_id) }}" method="post" class="d-inline">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-sm btn-danger" onclick="return confirm('Permanently delete transaction {{ $item->id }}?')">
+                                        <button class="btn btn-sm btn-danger" onclick="return confirm('Permanently delete transaction {{ $item->trx_id }}?')">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                     </form>
@@ -62,6 +62,9 @@
                         @endforelse
                     </tbody>
                 </table>
+                <div class="float-right">
+                    {{ $items->links() }}
+                </div>
             </div>
         </div>
 

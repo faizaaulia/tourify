@@ -15,7 +15,7 @@ class CreateTransactionDetailsTable extends Migration
     {
         Schema::create('transaction_details', function (Blueprint $table) {
             $table->id();
-            $table->integer('transactions_id');
+            $table->string('trxs_id', 25);
             $table->string('username');
             $table->string('nationality');
             $table->boolean('is_visa');

@@ -33,7 +33,7 @@
             <table class="table table-bordered">
                 <tr>
                     <th>ID</th>
-                    <td>{{ $item->id }}</td>
+                    <td>{{ Str::upper($item->trx_id) }}</td>
                 </tr>
                 <tr>
                     <th>Paket Travel</th>
@@ -60,7 +60,7 @@
                     <td>
                         <table class="table table-bordered">
                             <tr>
-                                <th>ID</th>
+                                <th>#</th>
                                 <th>Name</th>
                                 <th>Nationality</th>
                                 <th>VISA</th>
@@ -69,7 +69,7 @@
                             <tr>
                                 @foreach ($item->details as $detail)
                                     <tr>
-                                        <td>{{ $detail->id }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $detail->username }}</td>
                                         <td>{{ $detail->nationality }}</td>
                                         <td>{{ $detail->is_visa ? '30 days' : 'N/A' }}</td>

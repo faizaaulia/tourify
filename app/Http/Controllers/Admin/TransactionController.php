@@ -12,49 +12,39 @@ class TransactionController extends Controller
     {
         $items = Transaction::with([
             'details', 'travel_package', 'user'
-        ])->get();
+        ])->orderBy('created_at', 'desc')->paginate(10);
 
         return view('pages.admin.transaction.index', compact('items'));
     }
 
-    public function create()
-    {
-        //
-    }
-
-    public function store(TransactionRequest $request)
-    {
-        //
-    }
-
-    public function show($id)
+    public function show($trx_id)
     {
         $item = Transaction::with([
             'details', 'travel_package', 'user'
-        ])->findOrFail($id);
+        ])->where('trx_id', $trx_id)->firstOrFail();
 
         return view('pages.admin.transaction.detail', compact('item'));
     }
 
-    public function edit($id)
+    public function edit($trx_id)
     {
-        $item = Transaction::findOrFail($id);
+        $item = Transaction::where('trx_id', $trx_id)->firstOrFail();
 
         return view('pages.admin.transaction.edit', compact('item'));
     }
 
-    public function update(TransactionRequest $request, $id)
+    public function update(TransactionRequest $request, $trx_id)
     {
-        $item = Transaction::findOrFail($id);
+        $item = Transaction::where('trx_id', $trx_id)->firstOrFail();
         $data = $request->all();
         $item->update($data);
         
         return redirect()->route('transaction.index');
     }
 
-    public function destroy($id)
+    public function destroy($trx_id)
     {
-        $item = Transaction::findOrFail($id);
+        $item = Transaction::where('trx_id', $trx_id)->firstOrFail();
         $item->delete();
 
         return redirect()->route('transaction.index');
