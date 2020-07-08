@@ -54,6 +54,7 @@
                         @endforelse
                     </tbody>
                 </table>
+                <div class="float-right">{{ $items->links() }}</div>
             </div>
         </div>
 

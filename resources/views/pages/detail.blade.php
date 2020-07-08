@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Detail')
+@section('title', $item->title)
 
 @section('content')
 <main>
@@ -24,35 +24,25 @@
             <div class="row">
                 <div class="col-lg-8 pl-lg-0 detail-wisata">
                     <div class="card card-detail">
-                        <h2>Bromo, Malang</h2>
-                        <p>Indonesia</p>
-                        <div class="gallery">
-                            <div class="xzoom-container">
-                                <img src="{{ url('assets/images/gallery/bromo-1.png') }}" alt="" class="xzoom" id="xzoom-default" xoriginal="{{ url('assets/images/gallery/bromo-1.png') }}">
-                                <div class="xzoom-thumbs">
-                                    <a href="{{ url('assets/images/gallery/bromo-1.png') }}">
-                                        <img class="xzoom-gallery" src="{{ url('assets/images/gallery/bromo-1.png') }}" xpreview="{{ url('assets/images/gallery/bromo-1.png') }}" width="120px">
-                                    </a>
-                                    <a href="{{ url('assets/images/gallery/bromo-2.png') }}">
-                                        <img class="xzoom-gallery" src="{{ url('assets/images/gallery/bromo-2.png') }}" xpreview="{{ url('assets/images/gallery/bromo-2.png') }}" width="120px">
-                                    </a>
-                                    <a href="{{ url('assets/images/gallery/bromo-3.png') }}">
-                                        <img class="xzoom-gallery" src="{{ url('assets/images/gallery/bromo-3.png') }}" xpreview="{{ url('assets/images/gallery/bromo-3.png') }}" width="120px">
-                                    </a>
-                                    <a href="{{ url('assets/images/gallery/bromo-4.png') }}">
-                                        <img class="xzoom-gallery" src="{{ url('assets/images/gallery/bromo-4.png') }}" xpreview="{{ url('assets/images/gallery/bromo-4.png') }}" width="120px">
-                                    </a>
-                                    <a href="{{ url('assets/images/gallery/bromo-5.png') }}">
-                                        <img class="xzoom-gallery" src="{{ url('assets/images/gallery/bromo-5.png') }}" xpreview="{{ url('assets/images/gallery/bromo-5.png') }}" width="120px">
-                                    </a>
+                        <h2>{{ $item->title }}</h2>
+                        <p>{{ $item->location }}</p>
+                        @if ($item->galleries->count())
+                            <div class="gallery">
+                                <div class="xzoom-container">
+                                    <img src="{{ Storage::url($item->galleries->first()->image) }}" alt="" class="xzoom" id="xzoom-default" xoriginal="{{ Storage::url($item->galleries->first()->image) }}">
+                                    <div class="xzoom-thumbs">
+                                        @foreach ($item->galleries as $gallery)
+                                            <a href="{{ Storage::url($gallery->image) }}">
+                                                <img class="xzoom-gallery" src="{{ Storage::url($gallery->image) }}" xpreview="{{ Storage::url($gallery->image) }}" width="120px">
+                                            </a>
+                                        @endforeach
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
                         <div class="about">
                             <h2>Tentang Wisata</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate nibh sed semper bibendum. Nulla pellentesque lectus id vehicula ornare. Aliquam erat volutpat. Nam nulla magna, imperdiet et bibendum quis, ultrices eunisl. Phasellus molestie ante sit amet nunc iaculis, at lobortis nulla dignissim.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate nibh sed semper bibendum. Nulla pellentesque lectus id vehicula ornare. Aliquam erat volutpat. Nam nulla magna, imperdiet et bibendum quis, ultrices eunisl.
-                            </p>
+                            <p>{{ $item->about }}</p>
                         </div>
                         <div class="row additional">
                             <div class="col-md-4 border-right">
@@ -60,7 +50,7 @@
                                     <img src="{{ url('assets/images/ic_event.png') }}" alt="" class="mr-3">
                                     <div class="info">
                                         <p>Featured Event</p>
-                                        <p class="info-desc">Lorem Ipsum</p>
+                                        <p class="info-desc">{{ $item->event }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +59,7 @@
                                     <img src="{{ url('assets/images/ic_language.png') }}" alt="" class="mr-3">
                                     <div class="info">
                                         <p>Language</p>
-                                        <p class="info-desc">Bahasa Indonesia</p>
+                                        <p class="info-desc">{{ $item->language }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +68,7 @@
                                     <img src="{{ url('assets/images/ic_food.png') }}" alt="" class="mr-3">
                                     <div class="info">
                                         <p>Foods</p>
-                                        <p class="info-desc">Local Foods</p>
+                                        <p class="info-desc">{{ $item->foods }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -102,23 +92,30 @@
                         <table class="trip-info mb-4">
                             <tr>
                                 <td class="info-title">Date of Departure</td>
-                                <td class="info-desc">5 Jun, 2020</td>
+                                <td class="info-desc">{{ \Carbon\Carbon::create($item->departure_date)->format('F n, Y') }}</td>
                             </tr>
                             <tr>
                                 <td class="info-title">Duration</td>
-                                <td class="info-desc">4D 3N</td>
+                                <td class="info-desc">{{ $item->duration }}</td>
                             </tr>
                             <tr>
                                 <td class="info-title">Type</td>
-                                <td class="info-desc">Open Trip</td>
+                                <td class="info-desc">{{ $item->type }}</td>
                             </tr>
                             <tr>
                                 <td class="info-title">Price</td>
-                                <td class="info-desc">$80 / person</td>
+                                <td class="info-desc">${{ $item->price }} / person</td>
                             </tr>
                         </table>
                         <div class="join text-center">
-                            <a href="{{ route('checkout') }}" class="btn btn-block btn-join">Join Now</a>
+                            @auth
+                                <form action="" method="post">
+                                    <button class="btn btn-block btn-join text-white">Join Now</button>
+                                </form>
+                            @endauth
+                            @guest
+                                <a href="{{ route('login') }}" class="btn btn-block btn-join">Login or Register to Join</a>
+                            @endguest
                         </div>
                     </div>
                 </div>
