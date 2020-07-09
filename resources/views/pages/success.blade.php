@@ -1,6 +1,8 @@
-@extends('layouts.success')
+@extends('layouts.blank')
 
 @section('title', 'Checkout Success')
+
+@include('includes.navbar-alternate')
 
 @section('content')
 <main>

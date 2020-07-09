@@ -12,8 +12,6 @@
 </head>
 
 <body>
-    @include('includes.navbar-alternate')
-
     @yield('content')
 </body>
 

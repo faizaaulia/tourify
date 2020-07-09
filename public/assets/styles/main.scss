@@ -473,6 +473,50 @@ header {
     }
 }
 
+// login page
+.login-container {
+    @media (min-width: 992px) {
+        background: linear-gradient(90deg, white 60%, #E4E6EB 40%);
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+.page-login {
+    height: 100vh;
+    .section-left {
+        @media (max-width: 768px) {
+            display: none;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #071C4D;
+        }
+    }
+    .section-right {
+        .card {
+            form {
+                label {
+                    color: #071C4D;
+                }
+                .btn-login {
+                    background-color: #FF7F00;
+                    color: white;
+                    &:hover {
+                        background-color: #FF9100;
+                        color: white;
+                    }
+                }
+                .forget {
+                    * {
+                        color: #B5B5B5;
+                    }
+                }
+            }
+        }
+    }
+}
+
 // mobile & tablet device
 @media only screen and (max-width: 768px) {
     .stats {

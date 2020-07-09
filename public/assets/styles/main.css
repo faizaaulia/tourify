@@ -504,6 +504,48 @@ header .btn-cta:hover {
   color: white;
 }
 
+@media (min-width: 992px) {
+  .login-container {
+    background: -webkit-gradient(linear, left top, right top, color-stop(60%, white), color-stop(40%, #E4E6EB));
+    background: linear-gradient(90deg, white 60%, #E4E6EB 40%);
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.page-login {
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .page-login .section-left {
+    display: none;
+  }
+}
+
+.page-login .section-left h1 {
+  font-family: 'Playfair Display', serif;
+  color: #071C4D;
+}
+
+.page-login .section-right .card form label {
+  color: #071C4D;
+}
+
+.page-login .section-right .card form .btn-login {
+  background-color: #FF7F00;
+  color: white;
+}
+
+.page-login .section-right .card form .btn-login:hover {
+  background-color: #FF9100;
+  color: white;
+}
+
+.page-login .section-right .card form .forget * {
+  color: #B5B5B5;
+}
+
 @media only screen and (max-width: 768px) {
   .stats .stats-detail {
     text-align: center;
